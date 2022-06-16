@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+{% for key, value in menu.items() %}
+    <p>Item: {{key}}. Price: {{value}} <a href="{{ url_for('process_order', selected_item=key, inserted_amount=0) }}">SELECT</a></p>
+{% endfor %}
+</body>
+</html>

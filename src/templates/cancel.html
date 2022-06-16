@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancel</title>
+</head>
+<body>
+    <p>
+        Your order has been cancelled.
+        {% if inserted_amount %}
+          <p>Don't forget to take already inserted {{inserted_amount}} cents</p>
+        {% endif %}
+        <a href="{{ url_for('index')}}">Press here to start over</a>
+    </p>
+</body>
+</html>

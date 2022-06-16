@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process order</title>
+</head>
+<body>
+    <p>Inserted amount: {{inserted_amount}}</p>
+    <p>Selected item: {{selected_item}}</p>
+    <hr></hr>
+    <p><a href="{{ url_for('cancel_order') }}">Cancel order</a></p>
+    {% for coin in available_coins %}
+    <a href="{{ url_for('process_order', selected_item=selected_item, inserted_amount=inserted_amount+coin) }}">Add {{coin}} coins</a>
+    {% endfor %}
+</body>
+</html>
